@@ -1,3 +1,72 @@
-hello world!<br>
-2<br><br>1<br>aa<br><br>aaa
-asdfasdf<p>asdfasdfasdf</p>asdf
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />  
+    <title> Derpy House</title>
+    <style>
+    body {
+      background: #000;
+      text-align: center;
+    }
+    #player {
+      display: none; /* 처음에는 숨김 */
+      margin-top: 20px;
+    }
+    /* 버튼 두 개 나란히 */
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    button img {
+      width: 120px;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; text-align: center;"> 
+        Happy Fans Happy Honmoon
+    </h1>
+    <script>
+    document.body.style.backgroundImage = "url('images/derpy_3.gif')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    </script>
+       <!-- 버튼 2개 -->
+    <div class="buttons">
+    <button onclick="playVideo('yebNIHKAC4A')">
+      <img src="huntrix.webp" alt="노래 1">
+    </button>
+    <button onclick="playVideo('cWppAbqm9I8')">
+      <img src="sajaboys.webp" alt="노래 2">
+    </button>
+    </div>
+
+    <!-- 유튜브 영상 -->
+    <div id="player">
+    <iframe id="yt" width="560" height="315"
+      src=""
+      title="YouTube video player"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+    </div>
+
+    <script>
+        function playVideo() {
+        const videoId = "yebNIHKAC4A"; // 재생하고 싶은 유튜브 영상 ID
+        const iframe = document.getElementById("yt");
+        iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+        document.getElementById("player").style.display = "block";
+        }
+    </script>
+</body>    
+</html>
